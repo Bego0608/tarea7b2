@@ -6,10 +6,55 @@
     <title>Document</title>
 </head>
 <body>
+    <h1>Móvil</h1>
+    <form action="">
+        <p><label for="">Marca: <input type="text" name="marca" id="marca"></label></p>
+        <p><label for="">Modelo: <input type="text" name="modelo" id="modelo"></label></p>
+        <p><label for="">Procesador: <input type="text" name="procesador" id="procesador"></label></p>
+        <p><label for="">Bateria: <input type="number" name="bateria" id="bateria"></label></p>
+        <p><label for="">Sistema: <input type="text" name="sistema" id="sistema"></label></p>
+        <p><label for="">Pantalla: <input type="text" name="pantalla" id="pantalla"></label></p>
+        <p><label for="">Extras <input type="text" name="extras" id="extras"></label></p>
+        <p><label for="">Precio: <input type="number" name="precio" id="precio"></label></p>
+        <p><label for="">Reacondicionado: <input type="checkbox" name="reacondicionado" id="reacondicionado"></label></p>
+        <h2>Memoria</h2>
+        <p><label for="">Memoria Ram: <input type="number" name="ram" id="ram"></label></p>
+        <p><label for="">Memoria Rom: <input type="number" name="rom" id="rom"></label></p>
+        <h2>Cámaras</h2>
+        <p><label for="">Principal: <input type="text" name="principal" id="principal"></label></p>
+        <p><label for="">Frontal: <input type="text" name="frontal" id="frontal"></label></p>
+        <p><label for="">Gran Angular: <input type="text" name="angular" id="angular"></label></p>
+        <p><label for="">Macro: <input type="text" name="macro" id="macro"></label></p>
+        
+    </form>
     <script>
         fetch ('miMovil.json')
         .then(response => response.json())
-        .then(movil => alert(movil.marca));
+        .then(movil => {
+            document.getElementById("marca").value = movil.marca;
+            document.getElementById("modelo").value = movil.modelo;
+            document.getElementById("procesador").value = movil.procesador;
+            document.getElementById("bateria").value = movil.bateria;
+            document.getElementById("sistema").value = movil.sistema;
+            document.getElementById("pantalla").value = movil.pantalla;
+            document.getElementById("precio").value = movil.precio;
+            document.getElementById("ram").value = movil.memoria.ram;
+            document.getElementById("rom").value = movil.memoria.rom;
+            if (movil.reacondicionado){
+                document.getElementById("marca").setAttribute("checked","checked");
+            }
+            document.getElementById("principal").value = movil.camara.principal;
+            document.getElementById("frontal").value = movil.camara.frontal;
+            document.getElementById("angular").value = movil.camara.granAngular;
+            document.getElementById("macro").value = movil.camara.macro;
+            for ( i=0; i<movil.extras.length; i++ ){
+                if (i == movil.extras.length -1){
+                    document.getElementById("extras").value += movil.extras[i]
+                } else {
+                    document.getElementById("extras").value += movil.extras[i]+","
+                }
+            }
+        });
     </script>
 </body>
 </html>

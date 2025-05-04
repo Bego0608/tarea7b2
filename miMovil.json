@@ -2,11 +2,11 @@
     "marca": "Samsung",
     "modelo": "A55",
     "memoria": {
-        "ram": "8gb",
-        "rom": "256gb"
+        "ram": 8,
+        "rom": 256
     },
     "pantalla": "6.6 pulgadas",
-    "cámara": {
+    "camara": {
         "frontal": "5px",
         "principal": "48px",
         "granAngular": "12px",
