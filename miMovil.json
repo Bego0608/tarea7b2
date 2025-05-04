@@ -1,0 +1,23 @@
+{
+    "marca": "Samsung",
+    "modelo": "A55",
+    "memoria": {
+        "ram": "8gb",
+        "rom": "256gb"
+    },
+    "pantalla": "6.6 pulgadas",
+    "cámara": {
+        "frontal": "5px",
+        "principal": "48px",
+        "granAngular": "12px",
+        "macro": "5px"
+    },
+    "extras": [
+        "Resistente al agua IP67", "reconocimiento de huella en pantalla", "5G"
+    ],
+    "procesador": "Samsung Exynos 1480", 
+    "bateria": "5000",
+    "sistema": "Android 14",
+    "precio": 479,
+    "reacondicionado": false
+}
